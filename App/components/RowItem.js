@@ -25,3 +25,5 @@ const styles = StyleSheet.create({
     color: Colors.text,
   },
 });
+
+export default RowItem;
