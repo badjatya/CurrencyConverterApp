@@ -1,15 +1,19 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 
 import Colors from "../constants/Colors";
 
-const RowItem = ({ rightIcon, text }) => {
+export const RowItem = ({ rightIcon, text }) => {
   return (
     <TouchableOpacity style={styles.row}>
       <Text style={styles.text}>{text}</Text>
       {rightIcon}
     </TouchableOpacity>
   );
+};
+
+export const RowSeparator = () => {
+  return <View style={styles.separator} />;
 };
 
 const styles = StyleSheet.create({
@@ -24,6 +28,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: Colors.text,
   },
+  separator: {
+    backgroundColor: Colors.border,
+    height: StyleSheet.hairlineWidth,
+    marginHorizontal: 20,
+  },
 });
-
-export default RowItem;
