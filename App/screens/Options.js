@@ -8,6 +8,8 @@ import {
   StatusBar,
 } from "react-native";
 
+import Colors from "../constants/Colors";
+
 const Options = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -40,10 +42,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "#343434",
+    color: Colors.text,
   },
   separator: {
-    backgroundColor: "#E2E2E2",
+    backgroundColor: Colors.border,
     height: StyleSheet.hairlineWidth,
     marginHorizontal: 20,
   },
