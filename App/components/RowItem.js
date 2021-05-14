@@ -3,9 +3,9 @@ import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 
 import Colors from "../constants/Colors";
 
-export const RowItem = ({ rightIcon, text }) => {
+export const RowItem = ({ rightIcon, text, onPress }) => {
   return (
-    <TouchableOpacity style={styles.row}>
+    <TouchableOpacity style={styles.row} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
       {rightIcon}
     </TouchableOpacity>

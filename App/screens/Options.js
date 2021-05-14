@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, StatusBar, Alert } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
@@ -13,18 +13,19 @@ const Options = () => {
         rightIcon={
           <Entypo name="chevron-right" size={20} color={Colors.blue} />
         }
+        onPress={() => alert("TODO!!")}
       />
       <RowSeparator />
-
       <RowItem
         text="React Native Basics"
         rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
+        onPress={() => alert("!!")}
       />
       <RowSeparator />
-
       <RowItem
         text="React Native by Examples"
         rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
+        onPress={() => alert("!!")}
       />
     </SafeAreaView>
   );
