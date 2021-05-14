@@ -5,11 +5,18 @@ import {
   StatusBar,
   Alert,
   ScrollView,
+  Linking,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
 import { RowItem, RowSeparator } from "../components/RowItem";
+
+const openLink = (url) => {
+  Linking.openURL(url).catch(() =>
+    Alert.alert("Sorry, something went wrong.", "Please try again later")
+  );
+};
 
 const Options = () => {
   return (
@@ -26,13 +33,13 @@ const Options = () => {
         <RowItem
           text="React Native Basics"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
-          onPress={() => alert("!!")}
+          onPress={openLink("https://www.google.com")}
         />
         <RowSeparator />
         <RowItem
           text="React Native by Examples"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
-          onPress={() => alert("!!")}
+          onPress={openLink("https://www.facebook.com")}
         />
       </ScrollView>
     </SafeAreaView>
