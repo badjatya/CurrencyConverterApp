@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  View,
   SafeAreaView,
   Text,
   TouchableOpacity,
@@ -14,9 +15,13 @@ const Options = () => {
         <Text style={styles.text}>React Native</Text>
       </TouchableOpacity>
 
+      <View style={styles.separator} />
+
       <TouchableOpacity style={styles.row}>
         <Text style={styles.text}>React Native Basics</Text>
       </TouchableOpacity>
+
+      <View style={styles.separator} />
 
       <TouchableOpacity style={styles.row}>
         <Text style={styles.text}>React Native by Examples</Text>
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
   separator: {
     backgroundColor: "#E2E2E2",
     height: StyleSheet.hairlineWidth,
-    marginLeft: 20,
+    marginHorizontal: 20,
   },
 });
 
