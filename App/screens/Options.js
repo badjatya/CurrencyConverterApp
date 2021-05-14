@@ -1,9 +1,15 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  StatusBar,
+} from "react-native";
 
 const Options = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.row}>
         <Text style={styles.text}>React Native</Text>
       </TouchableOpacity>
@@ -15,13 +21,27 @@ const Options = () => {
       <TouchableOpacity style={styles.row}>
         <Text style={styles.text}>React Native by Examples</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  row: {},
-  text: {},
+  container: {
+    marginTop: StatusBar.currentHeight,
+  },
+  row: {
+    marginHorizontal: 20,
+    marginVertical: 16,
+  },
+  text: {
+    fontSize: 16,
+    color: "#343434",
+  },
+  separator: {
+    backgroundColor: "#E2E2E2",
+    height: StyleSheet.hairlineWidth,
+    marginLeft: 20,
+  },
 });
 
 export default Options;
