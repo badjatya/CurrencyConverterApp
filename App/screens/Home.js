@@ -1,11 +1,26 @@
 import React from "react";
-import { View, StatusBar, StyleSheet } from "react-native";
+import { View, StatusBar, StyleSheet, Image, Dimensions } from "react-native";
 import Colors from "../constants/Colors";
+
+const screen = Dimensions.get("window");
 
 const Home = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={Colors.blue} />
+
+      <View style={styles.logoContainer}>
+        <Image
+          source={require("../assets/images/background.png")}
+          style={styles.logoBackground}
+          resizeMode="contain"
+        />
+        <Image
+          source={require("../assets/images/logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+      </View>
     </View>
   );
 };
@@ -14,6 +29,20 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.blue,
     flex: 1,
+    justifyContent: "center",
+  },
+  logoContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  logoBackground: {
+    width: screen.width / 0.45,
+    height: screen.width * 0.45,
+  },
+  logo: {
+    position: "absolute",
+    width: screen.width * 0.25,
+    height: screen.width * 0.25,
   },
 });
 
