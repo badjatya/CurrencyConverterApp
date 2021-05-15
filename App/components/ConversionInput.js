@@ -8,13 +8,13 @@ import {
 } from "react-native";
 import Colors from "../constants/Colors";
 
-const ConversionInput = ({ text, onButtonPress, value }) => {
+const ConversionInput = ({ text, onButtonPress, ...props }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={onButtonPress}>
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
-      <TextInput style={styles.input} value={value} />
+      <TextInput style={styles.input} {...props} />
     </View>
   );
 };
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 15,
     borderRightWidth: 1,
-    borderRightColor: Colors.blue,
+    borderRightColor: Colors.border,
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
   },
