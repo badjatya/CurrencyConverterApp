@@ -7,19 +7,22 @@ import {
   StyleSheet,
 } from "react-native";
 
-const ConversionInput = ({ text }) => {
+const ConversionInput = ({ text, onButtonPress, value }) => {
   return (
-    <View>
-      <TouchableOpacity>
-        <Text>{text}</Text>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={onButtonPress}>
+        <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
-      <TextInput />
+      <TextInput style={styles.input} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {},
+  button: {},
+  buttonText: {},
+  input: {},
 });
 
 export default ConversionInput;
