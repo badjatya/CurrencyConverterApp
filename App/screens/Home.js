@@ -23,7 +23,8 @@ const Home = () => {
           resizeMode="contain"
         />
       </View>
-      <ConversionInput />
+      <ConversionInput text="USD" onPress={() => alert("TODO!")} value="123" />
+      <ConversionInput text="GBP" onPress={() => alert("TODO!")} value="123" />
     </View>
   );
 };
