@@ -35,8 +35,8 @@ const Home = () => {
         onButtonPress={() => alert("TODO!")}
         value="123"
         onChangeText={(text) => console.log("TEXT: ", text)}
-        keyboardType="numeric"
         editable={false}
+        keyboardType="numeric"
       />
     </View>
   );

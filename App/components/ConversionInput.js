@@ -9,6 +9,11 @@ import {
 import Colors from "../constants/Colors";
 
 const ConversionInput = ({ text, onButtonPress, ...props }) => {
+  const containerStyles = [styles.container];
+
+  if (props.editable === false) {
+    containerStyles.push(styles.containerDisabled);
+  }
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={onButtonPress}>
@@ -27,10 +32,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: "row",
   },
+  containerDisabled: {
+    backgroundColor: Colors.offWhite,
+  },
   button: {
     padding: 15,
     borderRightWidth: 1,
     borderRightColor: Colors.border,
+    backgroundColor: Colors.white,
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
   },
