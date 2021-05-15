@@ -7,10 +7,13 @@ import {
   StyleSheet,
 } from "react-native";
 
-const ConversionInput = () => {
+const ConversionInput = ({ text }) => {
   return (
     <View>
-      <Text> Hii</Text>
+      <TouchableOpacity>
+        <Text>{text}</Text>
+      </TouchableOpacity>
+      <TextInput />
     </View>
   );
 };
