@@ -1,6 +1,8 @@
 import React from "react";
 import { View, StatusBar, StyleSheet, Image, Dimensions } from "react-native";
+
 import Colors from "../constants/Colors";
+import ConversionInput from "../components/ConversionInput";
 
 const screen = Dimensions.get("window");
 
@@ -21,6 +23,7 @@ const Home = () => {
           resizeMode="contain"
         />
       </View>
+      <ConversionInput />
     </View>
   );
 };
@@ -34,6 +37,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 20,
   },
   logoBackground: {
     width: screen.width / 0.45,
