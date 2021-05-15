@@ -27,11 +27,16 @@ const Home = () => {
         text="USD"
         onButtonPress={() => alert("TODO!")}
         value="123"
+        onChangeText={(text) => console.log("TEXT: ", text)}
+        keyboardType="numeric"
       />
       <ConversionInput
         text="GBP"
         onButtonPress={() => alert("TODO!")}
         value="123"
+        onChangeText={(text) => console.log("TEXT: ", text)}
+        keyboardType="numeric"
+        editable={false}
       />
     </View>
   );
