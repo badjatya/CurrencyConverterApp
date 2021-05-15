@@ -25,10 +25,23 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20,
     borderRadius: 5,
+    flexDirection: "row",
   },
-  button: {},
-  buttonText: {},
-  input: {},
+  button: {
+    padding: 15,
+    borderRightWidth: 1,
+    borderRightColor: Colors.blue,
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: Colors.blue,
+    fontWeight: "bold",
+  },
+  input: {
+    flex: 1,
+  },
 });
 
 export default ConversionInput;
