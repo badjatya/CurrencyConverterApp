@@ -1,5 +1,13 @@
 import React from "react";
-import { View, StatusBar, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  StatusBar,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Text,
+} from "react-native";
+import { format } from "date-fns";
 
 import Colors from "../constants/Colors";
 import ConversionInput from "../components/ConversionInput";
@@ -26,9 +34,25 @@ const styles = StyleSheet.create({
     width: screen.width * 0.25,
     height: screen.width * 0.25,
   },
+  textHeader: {
+    color: Colors.white,
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  text: {
+    color: Colors.white,
+    textAlign: "center",
+    fontSize: 14,
+  },
 });
 
 const Home = () => {
+  const baseCurrency = "USD";
+  const quoteCurrency = "GBP";
+  const conversionRate = 0.8345;
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={Colors.blue} />
@@ -45,21 +69,31 @@ const Home = () => {
           resizeMode="contain"
         />
       </View>
+
+      <Text style={styles.textHeader}>Currency Converter</Text>
+
       <ConversionInput
-        text="USD"
+        text={baseCurrency}
         onButtonPress={() => alert("TODO!")}
         value="123"
         onChangeText={(text) => console.log("TEXT: ", text)}
         keyboardType="numeric"
       />
       <ConversionInput
-        text="GBP"
+        text={quoteCurrency}
         onButtonPress={() => alert("TODO!")}
         value="123"
         onChangeText={(text) => console.log("TEXT: ", text)}
         editable={false}
         keyboardType="numeric"
       />
+
+      <Text style={styles.text}>
+        {`1 ${baseCurrency} = ${conversionRate} ${quoteCurrency} as of ${format(
+          new Date(),
+          "MMMM, do yyyy"
+        )}.`}
+      </Text>
     </View>
   );
 };
