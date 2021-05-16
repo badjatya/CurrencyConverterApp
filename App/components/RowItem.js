@@ -3,19 +3,6 @@ import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 
 import Colors from "../constants/Colors";
 
-export const RowItem = ({ rightIcon, text, onPress }) => {
-  return (
-    <TouchableOpacity style={styles.row} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
-      {rightIcon}
-    </TouchableOpacity>
-  );
-};
-
-export const RowSeparator = () => {
-  return <View style={styles.separator} />;
-};
-
 const styles = StyleSheet.create({
   row: {
     marginHorizontal: 20,
@@ -34,3 +21,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
 });
+
+export const RowItem = ({ rightIcon, text, onPress }) => {
+  return (
+    <TouchableOpacity style={styles.row} onPress={onPress}>
+      <Text style={styles.text}>{text}</Text>
+      {rightIcon}
+    </TouchableOpacity>
+  );
+};
+
+export const RowSeparator = () => {
+  return <View style={styles.separator} />;
+};

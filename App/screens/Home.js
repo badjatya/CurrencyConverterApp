@@ -6,6 +6,28 @@ import ConversionInput from "../components/ConversionInput";
 
 const screen = Dimensions.get("window");
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.blue,
+    flex: 1,
+    justifyContent: "center",
+  },
+  logoContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  logoBackground: {
+    width: screen.width / 0.45,
+    height: screen.width * 0.45,
+  },
+  logo: {
+    position: "absolute",
+    width: screen.width * 0.25,
+    height: screen.width * 0.25,
+  },
+});
+
 const Home = () => {
   return (
     <View style={styles.container}>
@@ -41,27 +63,5 @@ const Home = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.blue,
-    flex: 1,
-    justifyContent: "center",
-  },
-  logoContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  logoBackground: {
-    width: screen.width / 0.45,
-    height: screen.width * 0.45,
-  },
-  logo: {
-    position: "absolute",
-    width: screen.width * 0.25,
-    height: screen.width * 0.25,
-  },
-});
 
 export default Home;

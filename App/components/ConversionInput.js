@@ -6,23 +6,8 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
+
 import Colors from "../constants/Colors";
-
-const ConversionInput = ({ text, onButtonPress, ...props }) => {
-  const containerStyles = [styles.container];
-
-  if (props.editable === false) {
-    containerStyles.push(styles.containerDisabled);
-  }
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={onButtonPress}>
-        <Text style={styles.buttonText}>{text}</Text>
-      </TouchableOpacity>
-      <TextInput style={styles.input} {...props} />
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -55,5 +40,21 @@ const styles = StyleSheet.create({
     color: Colors.textLight,
   },
 });
+
+const ConversionInput = ({ text, onButtonPress, ...props }) => {
+  const containerStyles = [styles.container];
+
+  if (props.editable === false) {
+    containerStyles.push(styles.containerDisabled);
+  }
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={onButtonPress}>
+        <Text style={styles.buttonText}>{text}</Text>
+      </TouchableOpacity>
+      <TextInput style={styles.input} {...props} />
+    </View>
+  );
+};
 
 export default ConversionInput;

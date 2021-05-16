@@ -18,6 +18,12 @@ const openLink = (url) => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    marginTop: StatusBar.currentHeight,
+  },
+});
+
 const Options = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -45,11 +51,5 @@ const Options = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: StatusBar.currentHeight,
-  },
-});
 
 export default Options;
