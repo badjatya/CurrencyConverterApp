@@ -20,7 +20,7 @@ const openLink = (url) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: StatusBar.currentHeight,
+    marginTop: 10,
   },
 });
 
