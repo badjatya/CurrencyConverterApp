@@ -12,7 +12,6 @@ const MainStackScreen = () => {
     <MainStack.Navigator
       screenOptions={{ headerTitleAlign: "center" }}
       //   headerMode="none"
-      initialRouteName={Home}
     >
       <MainStack.Screen
         name="Home"
