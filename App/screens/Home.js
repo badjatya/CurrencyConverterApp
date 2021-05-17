@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const baseCurrency = "USD";
   const quoteCurrency = "GBP";
   const conversionRate = 0.8345;
@@ -65,11 +65,13 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={Colors.blue} />
+
       <SafeAreaView style={styles.navButton}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push("Options")}>
           <Entypo name="cog" size={32} color={Colors.white} />
         </TouchableOpacity>
       </SafeAreaView>
+
       <View style={styles.logoContainer}>
         <Image
           source={require("../assets/images/background.png")}
