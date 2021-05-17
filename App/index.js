@@ -1,11 +1,9 @@
 import React from "react";
-// import { View } from "react-native";
 
-// import Options from "./screens/Options";
-import Home from "./screens/Home";
+import Navigation from "./config/Navigation";
 
 const App = () => {
-  return <Home />;
+  return <Navigation />;
 };
 
 export default App;

@@ -8,14 +8,18 @@ import Options from "../screens/Options";
 const MainStack = createStackNavigator();
 
 const MainStackScreen = () => {
-  <MainStack.Navigator>
-    <MainStack.Screen name="Options" component={Options} />
-    <MainStack.Screen name="Home" component={Home} />
-  </MainStack.Navigator>;
+  return (
+    <MainStack.Navigator>
+      <MainStack.Screen name="Home" component={Home} />
+      <MainStack.Screen name="Options" component={Options} />
+    </MainStack.Navigator>
+  );
 };
 
 export default () => {
-  <NavigationContainer>
-    <MainStackScreen />
-  </NavigationContainer>;
+  return (
+    <NavigationContainer>
+      <MainStackScreen />
+    </NavigationContainer>
+  );
 };
