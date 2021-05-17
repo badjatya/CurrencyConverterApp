@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
 const Options = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
       <ScrollView>
         <RowItem
           text="React Native"
@@ -39,13 +40,13 @@ const Options = () => {
         <RowItem
           text="React Native Basics"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
-          onPress={openLink("https://www.google.com")}
+          onPress={() => openLink("https://www.google.com")}
         />
         <RowSeparator />
         <RowItem
           text="React Native by Examples"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
-          onPress={openLink("https://www.facebook.com")}
+          onPress={() => openLink("https://www.facebook.com")}
         />
       </ScrollView>
     </SafeAreaView>
