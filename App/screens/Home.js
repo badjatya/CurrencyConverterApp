@@ -90,7 +90,10 @@ const Home = ({ navigation }) => {
       <ConversionInput
         text={baseCurrency}
         onButtonPress={() =>
-          navigation.push("CurrencyList", { title: "Base Currency" })
+          navigation.push("CurrencyList", {
+            title: "Base Currency",
+            activeCurrency: baseCurrency,
+          })
         }
         value="123"
         onChangeText={(text) => console.log("TEXT: ", text)}
@@ -99,7 +102,10 @@ const Home = ({ navigation }) => {
       <ConversionInput
         text={quoteCurrency}
         onButtonPress={() =>
-          navigation.push("CurrencyList", { title: "Quote Currency" })
+          navigation.push("CurrencyList", {
+            title: "Quote Currency",
+            activeCurrency: quoteCurrency,
+          })
         }
         value="123"
         onChangeText={(text) => console.log("TEXT: ", text)}
