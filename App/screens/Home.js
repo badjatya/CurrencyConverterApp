@@ -6,8 +6,11 @@ import {
   Image,
   Dimensions,
   Text,
+  SafeAreaView,
+  TouchableOpacity,
 } from "react-native";
 import { format } from "date-fns";
+import { Entypo } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
 import ConversionInput from "../components/ConversionInput";
@@ -47,6 +50,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 14,
   },
+  navButton: {
+    position: "absolute",
+    top: 20,
+    right: 25,
+  },
 });
 
 const Home = () => {
@@ -57,7 +65,11 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={Colors.blue} />
-
+      <SafeAreaView style={styles.navButton}>
+        <TouchableOpacity>
+          <Entypo name="cog" size={32} color={Colors.white} />
+        </TouchableOpacity>
+      </SafeAreaView>
       <View style={styles.logoContainer}>
         <Image
           source={require("../assets/images/background.png")}
