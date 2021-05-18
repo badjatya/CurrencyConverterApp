@@ -11,10 +11,12 @@ const DEFAULT_QUOTE_CURRENCY = "GBP";
 export const ConversionContextProvider = ({ children }) => {
   const [baseCurrency, _setBaseCurrency] = useState(DEFAULT_BASE_CURRENCY);
   const [quoteCurrency, setQuoteCurrency] = useState(DEFAULT_QUOTE_CURRENCY);
+  const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState();
   const [rates, setRates] = useState({});
 
   const setBaseCurrency = (currency) => {
+    setIsLoading(true);
     return api(`/latest?base=${currency}`)
       .then((res) => {
         _setBaseCurrency(currency);
@@ -23,6 +25,9 @@ export const ConversionContextProvider = ({ children }) => {
       })
       .catch((error) => {
         Alert.alert("Sorry, something went wrong.", error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -39,6 +44,7 @@ export const ConversionContextProvider = ({ children }) => {
     swapCurrency,
     date,
     rates,
+    isLoading,
   };
 
   useEffect(() => {
