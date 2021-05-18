@@ -27,7 +27,6 @@ const CurrencyList = ({ navigation, route = {} }) => {
   const inset = useSafeArea();
 
   const params = route.params || {};
-  const { activeCurrency } = params;
 
   const { baseCurrency, quoteCurrency, setBaseCurrency, setQuoteCurrency } =
     useContext(ConversionContext);
@@ -38,7 +37,13 @@ const CurrencyList = ({ navigation, route = {} }) => {
       <FlatList
         data={currencies}
         renderItem={({ item }) => {
-          const selected = activeCurrency === item;
+          let selected = false;
+
+          if (params.isBaseCurrency && item === baseCurrency) {
+            selected = true;
+          } else if (!params.isBaseCurrency && item === quoteCurrency) {
+            selected = true;
+          }
 
           return (
             <RowItem
