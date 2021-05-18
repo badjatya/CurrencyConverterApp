@@ -95,7 +95,6 @@ const Home = ({ navigation }) => {
         onButtonPress={() =>
           navigation.push("CurrencyList", {
             title: "Base Currency",
-            activeCurrency: baseCurrency,
             isBaseCurrency: true,
           })
         }
@@ -108,7 +107,6 @@ const Home = ({ navigation }) => {
         onButtonPress={() =>
           navigation.push("CurrencyList", {
             title: "Quote Currency",
-            activeCurrency: quoteCurrency,
             isBaseCurrency: false,
           })
         }
