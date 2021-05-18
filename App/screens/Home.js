@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({ navigation }) => {
-  const { baseCurrency, quoteCurrency, swapCurrency } =
+  const { baseCurrency, quoteCurrency, swapCurrency, date, rates } =
     useContext(ConversionContext);
 
   const [value, setValue] = useState("100");
-  const conversionRate = 0.8345;
+  const conversionRate = rates[quoteCurrency];
 
   return (
     <View style={styles.container}>
@@ -117,10 +117,9 @@ const Home = ({ navigation }) => {
       />
 
       <Text style={styles.text}>
-        {`1 ${baseCurrency} = ${conversionRate} ${quoteCurrency} as of ${format(
-          new Date(),
-          "MMMM, do yyyy"
-        )}.`}
+        {`1 ${baseCurrency} = ${conversionRate} ${quoteCurrency} as of ${
+          date && format(new Date(date), "MMM do, yyyy")
+        }.`}
       </Text>
 
       <Button text="Reverse Currencies" onPress={swapCurrency} />
