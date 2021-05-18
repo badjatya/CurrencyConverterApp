@@ -47,7 +47,9 @@ const CurrencyList = ({ navigation, route = {} }) => {
                 )
               }
               onPress={() => {
-                params.onChange(item);
+                if (params.onChange) {
+                  params.onChange(item);
+                }
                 navigation.pop();
               }}
             />
