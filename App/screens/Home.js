@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   StatusBar,
@@ -58,9 +58,15 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({ navigation }) => {
-  const baseCurrency = "USD";
-  const quoteCurrency = "GBP";
+  const [baseCurrency, setBaseCurrency] = useState("USD");
+  const [quoteCurrency, setQuoteCurrency] = useState("GBP");
+  const [value, setValue] = useState("100");
   const conversionRate = 0.8345;
+
+  const swapCurrency = () => {
+    setBaseCurrency(quoteCurrency);
+    setQuoteCurrency(baseCurrency);
+  };
 
   return (
     <View style={styles.container}>
@@ -95,8 +101,8 @@ const Home = ({ navigation }) => {
             activeCurrency: baseCurrency,
           })
         }
-        value="123"
-        onChangeText={(text) => console.log("TEXT: ", text)}
+        value={value}
+        onChangeText={(text) => setValue(text)}
         keyboardType="numeric"
       />
       <ConversionInput
@@ -107,7 +113,7 @@ const Home = ({ navigation }) => {
             activeCurrency: quoteCurrency,
           })
         }
-        value="123"
+        value={value && `${(parseFloat(value) * conversionRate).toFixed(2)}`}
         onChangeText={(text) => console.log("TEXT: ", text)}
         editable={false}
         keyboardType="numeric"
