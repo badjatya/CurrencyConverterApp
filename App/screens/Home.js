@@ -126,7 +126,7 @@ const Home = ({ navigation }) => {
         )}.`}
       </Text>
 
-      <Button text="Reverse Currencies" onPress={() => alert("HII!")} />
+      <Button text="Reverse Currencies" onPress={swapCurrency} />
     </View>
   );
 };
