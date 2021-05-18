@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   View,
   StatusBar,
@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { format } from "date-fns";
 import { Entypo } from "@expo/vector-icons";
+import { ConversionContext } from "../util/ConversionContext";
 
 import Colors from "../constants/Colors";
 import ConversionInput from "../components/ConversionInput";
@@ -58,15 +59,16 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({ navigation }) => {
-  const [baseCurrency, setBaseCurrency] = useState("USD");
-  const [quoteCurrency, setQuoteCurrency] = useState("GBP");
+  const {
+    baseCurrency,
+    quoteCurrency,
+    setBaseCurrency,
+    setQuoteCurrency,
+    swapCurrency,
+  } = useContext(ConversionContext);
+
   const [value, setValue] = useState("100");
   const conversionRate = 0.8345;
-
-  const swapCurrency = () => {
-    setBaseCurrency(quoteCurrency);
-    setQuoteCurrency(baseCurrency);
-  };
 
   return (
     <View style={styles.container}>
