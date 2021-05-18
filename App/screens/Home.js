@@ -59,13 +59,8 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({ navigation }) => {
-  const {
-    baseCurrency,
-    quoteCurrency,
-    setBaseCurrency,
-    setQuoteCurrency,
-    swapCurrency,
-  } = useContext(ConversionContext);
+  const { baseCurrency, quoteCurrency, swapCurrency } =
+    useContext(ConversionContext);
 
   const [value, setValue] = useState("100");
   const conversionRate = 0.8345;
@@ -101,7 +96,7 @@ const Home = ({ navigation }) => {
           navigation.push("CurrencyList", {
             title: "Base Currency",
             activeCurrency: baseCurrency,
-            onChange: (currency) => setBaseCurrency(currency),
+            isBaseCurrency: true,
           })
         }
         value={value}
@@ -114,7 +109,7 @@ const Home = ({ navigation }) => {
           navigation.push("CurrencyList", {
             title: "Quote Currency",
             activeCurrency: quoteCurrency,
-            onChange: (currency) => setQuoteCurrency(currency),
+            isBaseCurrency: false,
           })
         }
         value={value && `${(parseFloat(value) * conversionRate).toFixed(2)}`}

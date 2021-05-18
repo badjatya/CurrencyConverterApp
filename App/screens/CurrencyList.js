@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, StatusBar, FlatList, StyleSheet } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { useSafeArea } from "react-native-safe-area-context";
 
+import { ConversionContext } from "../util/ConversionContext";
 import Colors from "../constants/Colors";
 import { RowItem, RowSeparator } from "../components/RowItem";
 import currencies from "../data/currencies.json";
@@ -28,6 +29,9 @@ const CurrencyList = ({ navigation, route = {} }) => {
   const params = route.params || {};
   const { activeCurrency } = params;
 
+  const { baseCurrency, quoteCurrency, setBaseCurrency, setQuoteCurrency } =
+    useContext(ConversionContext);
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
@@ -47,8 +51,10 @@ const CurrencyList = ({ navigation, route = {} }) => {
                 )
               }
               onPress={() => {
-                if (params.onChange) {
-                  params.onChange(item);
+                if (params.isBaseCurrency) {
+                  setBaseCurrency(item);
+                } else {
+                  setQuoteCurrency(item);
                 }
                 navigation.pop();
               }}
