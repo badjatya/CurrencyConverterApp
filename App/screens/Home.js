@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { format } from "date-fns";
 import { Entypo } from "@expo/vector-icons";
+
 import { ConversionContext } from "../util/ConversionContext";
 
 import Colors from "../constants/Colors";
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
+    // fontFamily: "Roboto-regular",
   },
   text: {
     color: Colors.white,
