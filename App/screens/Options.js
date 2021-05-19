@@ -34,7 +34,7 @@ const Options = () => {
           rightIcon={
             <Entypo name="chevron-right" size={20} color={Colors.blue} />
           }
-          onPress={() => alert("TODO!!")}
+          onPress={() => alert("Go to HELL!")}
         />
         <RowSeparator />
         <RowItem
