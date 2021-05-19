@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
-    fontFamily: "Roboto_400Regular",
   },
   text: {
     color: Colors.white,
