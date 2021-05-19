@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ConversionContextProvider } from "./util/ConversionContext";
 import Navigation from "./config/Navigation";
+import { ConversionContextProvider } from "./util/ConversionContext";
 
 const App = () => {
   return (
