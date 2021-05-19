@@ -55,6 +55,13 @@ const Options = () => {
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
           onPress={() => openLink("https://www.github.com")}
         />
+
+        <RowSeparator />
+        <RowItem
+          text="Amazon"
+          rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
+          onPress={() => openLink("https://www.amazon.in")}
+        />
       </ScrollView>
     </SafeAreaView>
   );
