@@ -48,6 +48,13 @@ const Options = () => {
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
           onPress={() => openLink("https://www.facebook.com")}
         />
+
+        <RowSeparator />
+        <RowItem
+          text="Github"
+          rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
+          onPress={() => openLink("https://www.github.com")}
+        />
       </ScrollView>
     </SafeAreaView>
   );
