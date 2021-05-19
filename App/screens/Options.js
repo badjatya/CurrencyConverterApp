@@ -30,7 +30,7 @@ const Options = () => {
       <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
       <ScrollView>
         <RowItem
-          text="React Native"
+          text="Help"
           rightIcon={
             <Entypo name="chevron-right" size={20} color={Colors.blue} />
           }
@@ -38,13 +38,13 @@ const Options = () => {
         />
         <RowSeparator />
         <RowItem
-          text="React Native Basics"
+          text="Google"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
           onPress={() => openLink("https://www.google.com")}
         />
         <RowSeparator />
         <RowItem
-          text="React Native by Examples"
+          text="Facebook"
           rightIcon={<Entypo name="export" size={20} color={Colors.blue} />}
           onPress={() => openLink("https://www.facebook.com")}
         />
